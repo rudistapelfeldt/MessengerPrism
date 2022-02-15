@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wpa81+wp8</AssetTargetFallback>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="6.6.0" PrivateAssets="all" />
+    <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" PrivateAssets="all" />
+    <PackageReference Include="Prism.Forms.Extensions" Version="1.0.0-pre4" />
+    <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
+    <PackageReference Include="Prism.Plugin.Popups" Version="8.0.76" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
+    <PackageReference Include="Mobile.BuildTools" Version="2.0.245" PrivateAssets="all" />
+    <PackageReference Include="Prism.QuickStart.MFractor.Config" Version="1.0.3" PrivateAssets="all" />
+    <PackageReference Include="LiveXAML" Version="2.1.73" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Strings\*.resx" Generator="ResXFileCodeGenerator" LastGenOutput="%(Filename).Designer.cs" />
+    <Compile Update="Strings\Resources.Designer.cs" DesignTime="true" AutoGen="true" DependentUpon="Resources.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="sqlite-net-pcl" />
+    <None Remove="Constants\" />
+    <None Remove="Sqlite\" />
+    <None Remove="Newtonsoft.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Constants\" />
+    <Folder Include="Sqlite\" />
+  </ItemGroup>
+</Project>
